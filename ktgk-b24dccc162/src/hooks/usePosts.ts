@@ -11,11 +11,17 @@ export function usePosts() {
     const raw = localStorage.getItem(STORAGE_KEY);
     if (raw) {
       try {
-        setPosts(JSON.parse(raw));
-        return;
-      } catch {}
+        const data = JSON.parse(raw);
+        if (Array.isArray(data) && data.length > 0) {
+          setPosts(data);
+          return;
+        }
+      } catch (e) {
+        console.error("Lỗi parse localStorage:", e);
+      }
     }
     // nếu chưa có data thì seed
+    console.log("🌱 Seeding mock data...");
     localStorage.setItem(STORAGE_KEY, JSON.stringify(SEED_POSTS));
     setPosts(SEED_POSTS);
   }, []);
@@ -32,5 +38,5 @@ export function usePosts() {
 
   const findById = (id: string) => posts.find(p => p.id === id);
 
-  return { posts, addPost, updatePost, deletePost, findById, setPosts };
+  return { posts, addPost, updatePost, deletePost, findById };
 }

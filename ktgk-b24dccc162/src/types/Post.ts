@@ -8,5 +8,5 @@ export interface Post {
   thumbnail: string;
   content: string;
   category: Category;
-  date: string;
+  date: Date;
 }
