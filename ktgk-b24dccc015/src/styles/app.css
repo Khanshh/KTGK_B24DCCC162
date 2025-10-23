@@ -1,0 +1,32 @@
+:root{--primary:#2b6cb0}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial}
+body{margin:0;background:#f7fafc;color:#111}
+.app .container{max-width:1100px;margin:24px auto;padding:0 16px}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:white;box-shadow:0 1px 4px rgba(0,0,0,0.05)}
+.logo{font-weight:700;color:var(--primary);cursor:pointer}
+.nav-center a{margin:0 8px;text-decoration:none;color:inherit}
+.active-link{font-weight:700;border-bottom:2px solid var(--primary);padding-bottom:4px}
+.btn{background:var(--primary);color:white;border:none;padding:8px 12px;border-radius:6px;cursor:pointer}
+.page-header{display:flex;justify-content:space-between;align-items:center;margin:16px 0}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
+.thumb{width:100%;height:160px;object-fit:cover}
+.card-body{padding:12px}
+.meta{font-size:12px;color:#666;margin-bottom:8px}
+.card-actions{display:flex;gap:8px;margin-top:8px}
+button{cursor:pointer}
+.danger{background:#e53e3e;color:white;border:none;padding:6px 10px;border-radius:6px}
+.form{background:white;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.form label{display:block;margin-bottom:12px}
+.form input,.form textarea,.form select{width:100%;padding:8px;margin-top:6px;border:1px solid #ddd;border-radius:6px}
+.form-actions{display:flex;gap:8px}
+.err{color:#e53e3e;font-size:13px;margin-top:6px}
+.detail-thumb{width:100%;max-height:360px;object-fit:cover;border-radius:8px}
+.detail{background:white;padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+@media(max-width:900px){
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:600px){
+  .grid{grid-template-columns:1fr}
+  .nav-center{display:none}
+}
